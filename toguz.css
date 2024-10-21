@@ -1,0 +1,136 @@
+ body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: url('photo_2024-09-02_09-27-54.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        h1 {
+            font-family: 'Tajawal', sans-serif;
+            color: #8B0000; /* ÐšÑ‹Ñ€Ð³Ñ‹Ð·Ð´Ñ‹Ð½ ÐºÑ‹Ð·Ñ‹Ð» Ñ‚Ò¯ÑÒ¯ */
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(9, 70px);
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .hole {
+            width: 70px;
+            height: 70px;
+            background-color: #C19A6B; /* ÐšÑ‹Ñ€Ð³Ñ‹Ð· Ð±Ð¾Ð· Ò¯Ð¹Ò¯Ð½Ò¯Ð½ Ð¸Ñ‡ÐºÐ¸ ÐºÐ¾Ð¾Ð·Ð´Ð¾Ð¾ÑÑƒÐ½Ð´Ð°Ð³Ñ‹ Ñ‚Ò¯Ñ */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            position: relative;
+            border: 3px solid #8B0000; /* ÐšÑ‹Ñ€Ð³Ñ‹Ð· ÐºÑ‹Ð·Ñ‹Ð» Ñ‚Ò¯ÑÒ¯ */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .hole:hover {
+            background-color: #FFD700; /* ÐÐ»Ñ‚Ñ‹Ð½ Ñ‚Ò¯ÑÐºÓ© Ð¶Ð°ÐºÑ‹Ð½ */
+            transform: scale(1.1);
+        }
+
+        .hole img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .scores {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #8B0000;
+        }
+
+        .hole .stones {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            font-size: 14px;
+            background-color: white;
+            border-radius: 50%;
+            padding: 3px 7px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #8B0000; /* ÐšÑ‹Ñ€Ð³Ñ‹Ð· ÐºÑ‹Ð·Ñ‹Ð»Ñ‹ */
+            color: white;
+            border: 2px solid #FFD700; /* ÐÐ»Ñ‚Ñ‹Ð½ Ñ‡ÐµÐº */
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #A52A2A; /* ÐšÐ°Ñ€Ð°Ð¼ÐµÐ»Ð´Ò¯Ò¯ ÐºÒ¯Ñ€Ó©Ò£ Ñ‚Ò¯Ñ */
+            transform: scale(1.05);
+        }
+
+        .history-rules, .creator, .news {
+            width: 80%;
+            margin: 30px auto;
+            text-align: left;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .history-rules h2, .creator h2, .news h2 {
+            text-align: center;
+            color: #8B0000;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .difficulty {
+            margin: 20px 0;
+            color: #8B0000;
+        }
+
+        .container img {
+            margin-top: 15px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        #win-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 128, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            z-index: 10;
+            animation: fadeIn 1s;
+        }
