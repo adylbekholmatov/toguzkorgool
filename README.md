@@ -1,4 +1,3 @@
-# toguzkorgool
  <!DOCTYPE html>
 <html lang="ky">
 <head>
@@ -13,22 +12,25 @@
             background-size: cover;
             color: #333;
             transition: background 0.3s, color 0.3s;
-        } h1 {
+        }
+        h1 {
             font-family: 'Tajawal', sans-serif;
-            color: #8B0000; /* ÐšÑ‹Ñ€Ð³Ñ‹Ð·Ð´Ñ‹Ð½ ÐºÑ‹Ð·Ñ‹Ð» Ñ‚Ò¯ÑÒ¯ */
+            color: #8B0000; 
             font-size: 48px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
-        } .board {
+        }
+        .board {
             display: grid;
             grid-template-columns: repeat(9, 70px);
             gap: 10px;
             justify-content: center;
             margin-bottom: 20px;
-        } .hole {
+        }
+        .hole {
             width: 70px;
             height: 70px;
-            background-color: #C19A6B; /* ÐšÑ‹Ñ€Ð³Ñ‹Ð· Ð±Ð¾Ð· Ò¯Ð¹Ò¯Ð½Ò¯Ð½ Ð¸Ñ‡ÐºÐ¸ ÐºÐ¾Ð¾Ð·Ð´Ð¾Ð¾ÑÑƒÐ½Ð´Ð°Ð³Ñ‹ Ñ‚Ò¯Ñ */
+            background-color: #C19A6B;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -38,17 +40,21 @@
             position: relative;
             border: 3px solid #8B0000; /* ÐšÑ‹Ñ€Ð³Ñ‹Ð· ÐºÑ‹Ð·Ñ‹Ð» Ñ‚Ò¯ÑÒ¯ */
             transition: background-color 0.3s, transform 0.3s;
-        }.hole:hover {
+        }
+        .hole:hover {
             background-color: #FFD700; /* ÐÐ»Ñ‚Ñ‹Ð½ Ñ‚Ò¯ÑÐºÓ© Ð¶Ð°ÐºÑ‹Ð½ */
             transform: scale(1.1);
-        } .hole img {
+        }
+         .hole img {
             width: 45px;
             height: 45px;
-        }.scores {
+        } 
+        .scores {
             margin-bottom: 20px;
             font-size: 18px;
             color: #8B0000;
-        } .hole .stones {
+        } 
+        .hole .stones {
             position: absolute;
             bottom: 5px;
             right: 5px;
@@ -57,7 +63,8 @@
             border-radius: 50%;
             padding: 3px 7px;
             border: 1px solid #ccc;
-        }button {
+        } 
+        button {
             padding: 10px 20px;
             font-size: 16px;
             background-color: #8B0000; /* ÐšÑ‹Ñ€Ð³Ñ‹Ð· ÐºÑ‹Ð·Ñ‹Ð»Ñ‹ */
@@ -66,10 +73,12 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
-        } button:hover {
+        } 
+        button:hover {
             background-color: #A52A2A; /* ÐšÐ°Ñ€Ð°Ð¼ÐµÐ»Ð´Ò¯Ò¯ ÐºÒ¯Ñ€Ó©Ò£ Ñ‚Ò¯Ñ */
             transform: scale(1.05);
-        } .history-rules, .creator, .news {
+        }
+        .history-rules, .creator, .news {
             width: 80%;
             margin: 30px auto;
             text-align: left;
@@ -78,18 +87,22 @@
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             font-family: 'Tajawal', sans-serif;
-        }.history-rules h2, .creator h2, .news h2 {
+        }
+        .history-rules h2, .creator h2, .news h2 {
             text-align: center;
             color: #8B0000;
             font-family: 'Tajawal', sans-serif;
-        }.difficulty {
+        }
+        .difficulty {
             margin: 20px 0;
             color: #8B0000;
-        } .container img {
+        }
+        .container img {
             margin-top: 15px;
             width: 100%;
             border-radius: 10px;
-        }@keyframes fadeIn {
+        }
+        @keyframes fadeIn {
             from {
                 opacity: 0;
                 transform: translate(-50%, -60%);
@@ -98,7 +111,8 @@
                 opacity: 1;
                 transform: translate(-50%, -50%);
             }
-        } #win-message {
+        }
+         #win-message {
             display: none;
             position: fixed;
             top: 50%;
@@ -169,7 +183,7 @@
         let gameMode = 'bot';
         let difficulty = 'easy';
         let isDarkTheme = true;
-function createBoard() {
+        function createBoard() {
             const boardElement = document.getElementById('board');
             boardElement.innerHTML = '';
             for (let player = 0; player < 2; player++) {
@@ -184,7 +198,7 @@ function createBoard() {
                 }
             }
         }
-function makeMove(player, holeIndex) {
+        function makeMove(player, holeIndex) {
             if (player !== currentPlayer) {
                 alert("ÐÐ·Ñ‹Ñ€ ÑÐ¸Ð·Ð´Ð¸Ð½ ÐºÐµÐ·ÐµÐ³Ð¸Ò£Ð¸Ð· ÑÐ¼ÐµÑ!");
                 return;
@@ -197,7 +211,7 @@ function makeMove(player, holeIndex) {
             board[player][holeIndex] = 0;
             let side = player;
             let hole = holeIndex;
- while (stones > 0) {
+            while (stones > 0) {
                 hole++;
                 if (hole > 8) {
                     hole = 0;
@@ -205,31 +219,31 @@ function makeMove(player, holeIndex) {
                 }
                 board[side][hole]++;
                 stones--;
-            }
-  if (side === currentPlayer && board[side][hole] === 3) {
+            }if (side === currentPlayer && board[side][hole] === 3) {
                 scores[currentPlayer] += board[side][hole];
                 board[side][hole] = 0;
                 updateScore();
-            }
-  currentPlayer = 1 - currentPlayer;
+            }currentPlayer = 1 - currentPlayer;
             createBoard();
             checkWin();
-        }
-function updateScore() {
+        } 
+        function updateScore() {
             document.getElementById('player1-score').innerText = `1-ÐžÑŽÐ½Ñ‡ÑƒÐ½ÑƒÐ½ ÑƒÐ¿Ð°Ð¹Ñ‹: ${scores[0]}`;
             document.getElementById('player2-score').innerText = `2-ÐžÑŽÐ½Ñ‡ÑƒÐ½ÑƒÐ½ ÑƒÐ¿Ð°Ð¹Ñ‹: ${scores[1]}`;
         }
- function checkWin() {
+        function checkWin() {
             if (scores[0] >= 81) {
                 showWinMessage(1);
             } else if (scores[1] >= 81) {
                 showWinMessage(2);
             }
-        }function showWinMessage(winnerNumber) {
+        }
+        function showWinMessage(winnerNumber) {
             const winMessage = document.getElementById('win-message');
             document.getElementById('winner-number').innerText = winnerNumber;
             winMessage.style.display = 'block';
-        }function restartGame() {
+        }
+        function restartGame() {
             scores = [0, 0];
             currentPlayer = 0;
             board = [
@@ -239,18 +253,21 @@ function updateScore() {
             createBoard();
             updateScore();
             document.getElementById('win-message').style.display = 'none';
-        }function toggleTheme() {
+        }
+function toggleTheme() {
             isDarkTheme = !isDarkTheme;
             if (isDarkTheme) {
                 document.body.style.background = "url('kyrgyz-pattern-bg.jpg') no-repeat center center fixed";
                 document.body.style.color = "#333";
-            } else {
+            } 
+            else {
                 document.body.style.background = "#fff";
                 document.body.style.color = "#000";
             }
-        } window.onload = () => {
+        }
+        window.onload = () => {
             createBoard();
-        }a
+        }
 </script>
 </body>
 </html>
